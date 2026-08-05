@@ -26,6 +26,7 @@
 - Atomic commit completed and pushed: `chore(packaging): add reproducible dependencies and tooling`.
 - Atomic commit completed and pushed: `ci: add automated lint, test and inference smoke checks`.
 - Atomic commit completed and pushed: `feat(space): add Docker-based Hugging Face Space deployment`.
+- Atomic commit completed and pushed: `docs(release): add citation, license and changelog`.
 
 ## Current Branch
 
@@ -33,7 +34,7 @@
 
 ## Latest Commit Hash
 
-- `90595d7`
+- `78e5c72`
 
 ## Tests Already Passed
 
@@ -139,13 +140,11 @@
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `CITATION.cff`
-- `CHANGELOG.md`
-- `LICENSE`
+- `pyproject.toml`
 
 ## Next Exact Action
 
-- Run validation, Ruff, smoke, and pytest; commit and push `docs(release): add citation, license and changelog`.
+- Run validation, Ruff, smoke, and pytest; commit and push `fix(ci): add project root to pytest imports`, then verify GitHub Actions on the latest commit.
 
 ## Unresolved Errors
 
@@ -154,7 +153,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `90595d7`.
+- Latest pushed commit: `78e5c72`.
 
 ## Hugging Face Deployment Status
 
