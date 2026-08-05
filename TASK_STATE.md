@@ -15,6 +15,7 @@
 - Atomic commit completed and pushed: `notebook(data): add reproducible data setup and audit workflow`.
 - Atomic commit completed and pushed: `notebook(training): organize baseline and model-selection experiments`.
 - Atomic commit completed and pushed: `notebook(tuning): add C tuning and controlled ablation experiments`.
+- Atomic commit completed and pushed: `notebook(evaluation): add explainability and validation error analysis`.
 
 ## Current Branch
 
@@ -22,7 +23,7 @@
 
 ## Latest Commit Hash
 
-- `176a94d`
+- `8a161e9`
 
 ## Tests Already Passed
 
@@ -56,6 +57,11 @@
   - 40 cells, source-only.
   - All E0-E16 experiment IDs present.
   - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or test prediction variables.
+- Validation/explainability notebook validation passed:
+  - JSON parsed successfully.
+  - 20 cells, source-only.
+  - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or final test prediction variables.
+  - Covers high-confidence errors, manual audit, TF-IDF coefficient contributions, event-specific terms, and `other_relevant_information` ambiguity.
 
 ## Files Currently Being Modified
 
@@ -64,7 +70,7 @@
 
 ## Next Exact Action
 
-- Validate validation/explainability notebook section, commit and push `notebook(evaluation): add explainability and validation error analysis`.
+- Validate final one-time test evaluation notebook section, commit and push `notebook(test): add one-time final test evaluation`.
 
 ## Unresolved Errors
 
@@ -74,7 +80,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `176a94d`.
+- Latest pushed commit: `8a161e9`.
 
 ## Hugging Face Deployment Status
 
