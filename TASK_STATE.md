@@ -8,6 +8,7 @@
 - GitHub repository created: `https://github.com/celalthedon/crisis-text-triage`.
 - Atomic commit completed and pushed: `chore(repo): initialize project metadata and ignore generated files`.
 - Original notebook archived at `notebooks/archive/01_data_setup_original.ipynb` with all 324 source cells preserved and outputs cleared.
+- Atomic commit completed and pushed: `chore(notebooks): archive the original research notebook`.
 
 ## Current Branch
 
@@ -15,7 +16,7 @@
 
 ## Latest Commit Hash
 
-- `ac5c441`
+- `81a6da3`
 
 ## Tests Already Passed
 
@@ -25,16 +26,18 @@
   - source cells: 324
   - archive cells: 324
   - source hash: `8e7117f1cb2e5045af704a1af5388d238025e46330a10f2a8535005afa352291`
+- Artifact schema inspection confirmed final model, metrics, report columns, and local data split sizes.
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `notebooks/archive/01_data_setup_original.ipynb`
-- `TASK_STATE.md`
+- `src/__init__.py`
+- `src/paths.py`
+- `src/inference.py`
 
 ## Next Exact Action
 
-- Run notebook archive validation, commit and push `chore(notebooks): archive the original research notebook`, then continue Phase 1 audit cleanup and path/module refactoring.
+- Run compile and inference smoke checks, commit and push `refactor(paths): replace Colab and Drive paths with project-relative paths`.
 
 ## Unresolved Errors
 
@@ -44,7 +47,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `ac5c441`.
+- Latest pushed commit: `81a6da3`.
 
 ## Hugging Face Deployment Status
 
