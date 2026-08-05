@@ -9,6 +9,7 @@
 - Atomic commit completed and pushed: `chore(repo): initialize project metadata and ignore generated files`.
 - Original notebook archived at `notebooks/archive/01_data_setup_original.ipynb` with all 324 source cells preserved and outputs cleared.
 - Atomic commit completed and pushed: `chore(notebooks): archive the original research notebook`.
+- Atomic commit completed and pushed: `refactor(paths): replace Colab and Drive paths with project-relative paths`.
 
 ## Current Branch
 
@@ -16,7 +17,7 @@
 
 ## Latest Commit Hash
 
-- `81a6da3`
+- `d0dc81d`
 
 ## Tests Already Passed
 
@@ -27,17 +28,19 @@
   - archive cells: 324
   - source hash: `8e7117f1cb2e5045af704a1af5388d238025e46330a10f2a8535005afa352291`
 - Artifact schema inspection confirmed final model, metrics, report columns, and local data split sizes.
+- Path refactor checks passed:
+  - `python -m compileall app.py src`
+  - `python -c "from src.inference import load_model, predict_message; ..."`
+  - `python src\inference.py`
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `src/__init__.py`
-- `src/paths.py`
-- `src/inference.py`
+- `src/preprocessing.py`
 
 ## Next Exact Action
 
-- Run compile and inference smoke checks, commit and push `refactor(paths): replace Colab and Drive paths with project-relative paths`.
+- Run compile and preprocessing behavior checks, commit and push `refactor(preprocessing): extract reusable text preprocessing utilities`.
 
 ## Unresolved Errors
 
@@ -47,7 +50,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `81a6da3`.
+- Latest pushed commit: `d0dc81d`.
 
 ## Hugging Face Deployment Status
 
