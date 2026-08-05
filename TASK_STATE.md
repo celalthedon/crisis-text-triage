@@ -19,6 +19,7 @@
 - Atomic commit completed and pushed: `notebook(test): add one-time final test evaluation`.
 - Atomic commit completed and pushed: `feat(inference): harden reusable prediction and explanation module`.
 - Atomic commit completed and pushed: `test(inference): add model and inference tests`.
+- Atomic commit completed and pushed: `feat(app): refine the explainable Streamlit interface`.
 
 ## Current Branch
 
@@ -26,7 +27,7 @@
 
 ## Latest Commit Hash
 
-- `f3a3f37`
+- `3b55425`
 
 ## Tests Already Passed
 
@@ -88,12 +89,15 @@
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `app.py`
-- `.streamlit/config.toml`
+- `assets/final_test_confusion_matrix_normalized.png`
+- `checkpoints/final_model_selection.json`
+- `reports/*.csv`
+- `reports/final_test_metrics.json`
+- `reports/final_test_confusion_matrix_normalized.png`
 
 ## Next Exact Action
 
-- Run app syntax checks, inference smoke script, and pytest; commit and push `feat(app): refine the explainable Streamlit interface`.
+- Validate report consistency and safe publication scope, commit and push `docs(results): add final reports and visualization assets`.
 
 ## Unresolved Errors
 
@@ -103,7 +107,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `f3a3f37`.
+- Latest pushed commit: `3b55425`.
 
 ## Hugging Face Deployment Status
 

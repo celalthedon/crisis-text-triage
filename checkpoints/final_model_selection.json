@@ -1,0 +1,56 @@
+{
+    "saved_at": "2026-08-05T15:37:40",
+    "selected_experiment": "E11_raw_text_tfidf_1_2_lr_balanced_C2",
+    "selection_metric": "validation_macro_f1",
+    "validation_metrics": {
+        "accuracy": 0.7466957525984859,
+        "macro_f1": 0.7252023576533818,
+        "weighted_f1": 0.7459769855085853,
+        "missing_recall": 0.6666666666666666,
+        "urgent_recall": 0.6022727272727273
+    },
+    "training_data": {
+        "train_samples": 53531,
+        "validation_samples": 7793,
+        "combined_samples": 61324
+    },
+    "vectorizer_configuration": {
+        "type": "TfidfVectorizer",
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "sublinear_tf": true,
+        "lowercase": true,
+        "stop_words": null
+    },
+    "classifier_configuration": {
+        "type": "LogisticRegression",
+        "C": 2.0,
+        "class_weight": "balanced",
+        "solver": "liblinear",
+        "max_iter": 1000,
+        "random_state": 42
+    },
+    "ablation_conclusion": {
+        "raw_vs_minimal": "Raw text produced a marginally higher validation Macro-F1 with identical critical recalls.",
+        "stopword_removal": "Reduced overall Macro-F1 and urgent recall.",
+        "min_df_1": "Improved urgent recall slightly but reduced overall Macro-F1.",
+        "min_df_5": "Reduced Macro-F1 without improving critical recalls.",
+        "sublinear_tf": "Provided a small performance improvement.",
+        "max_df_095": "Removed no features and changed no predictions."
+    },
+    "test_set_status": "EVALUATED_ONCE",
+    "final_test_metrics": {
+        "evaluated_at": "2026-08-05T15:40:04",
+        "model": "final_e11_train_plus_validation.joblib",
+        "test_samples": 15160,
+        "accuracy": 0.7514511873350923,
+        "macro_f1": 0.7282162120920709,
+        "weighted_f1": 0.7501488871965277,
+        "missing_recall": 0.7361111111111112,
+        "urgent_recall": 0.6257197696737045,
+        "evaluation_policy": "Test set was evaluated once after final model selection."
+    }
+}

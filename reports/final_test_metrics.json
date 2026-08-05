@@ -1,0 +1,11 @@
+{
+    "evaluated_at": "2026-08-05T15:40:04",
+    "model": "final_e11_train_plus_validation.joblib",
+    "test_samples": 15160,
+    "accuracy": 0.7514511873350923,
+    "macro_f1": 0.7282162120920709,
+    "weighted_f1": 0.7501488871965277,
+    "missing_recall": 0.7361111111111112,
+    "urgent_recall": 0.6257197696737045,
+    "evaluation_policy": "Test set was evaluated once after final model selection."
+}
