@@ -27,6 +27,7 @@
 - Atomic commit completed and pushed: `ci: add automated lint, test and inference smoke checks`.
 - Atomic commit completed and pushed: `feat(space): add Docker-based Hugging Face Space deployment`.
 - Atomic commit completed and pushed: `docs(release): add citation, license and changelog`.
+- Atomic commit completed and pushed: `fix(ci): add project root to pytest imports`.
 
 ## Current Branch
 
@@ -34,7 +35,7 @@
 
 ## Latest Commit Hash
 
-- `78e5c72`
+- `5526ddf`
 
 ## Tests Already Passed
 
@@ -136,29 +137,46 @@
   - `python scripts\smoke_test_inference.py`
   - `python -m pytest -q` (11 passed)
   - `ruff check .`
+- CI fix checks passed:
+  - `python scripts\validate_project.py`
+  - `python -m compileall app.py src scripts tests deploy\huggingface`
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed)
+  - `ruff check .`
+- GitHub Actions status:
+  - Latest run for `5526ddf` completed successfully.
+- Docker checks passed:
+  - `docker build -t crisis-text-triage:local -f deploy/huggingface/Dockerfile .`
+  - `docker run --rm crisis-text-triage:local python -c "... predict_message(...) ..."`
+  - Container Streamlit health check passed at `http://127.0.0.1:7860/_stcore/health`.
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `pyproject.toml`
 
 ## Next Exact Action
 
-- Run validation, Ruff, smoke, and pytest; commit and push `fix(ci): add project root to pytest imports`, then verify GitHub Actions on the latest commit.
+- Manual action required: enable Hugging Face PRO or otherwise provide Docker Space capability for `celalibr`, then rerun `python deploy\huggingface\deploy_space.py`.
 
 ## Unresolved Errors
 
 - GitHub CLI is installed at `C:\Program Files\GitHub CLI\gh.exe`, but this shell session does not have it on `PATH`; commands use the full path.
+- Hugging Face rejected Docker Space creation with `402 Payment Required`: Docker Spaces on free `cpu-basic` require a PRO subscription. No `celalibr/crisis-text-triage` or `celalibr/crisis-text-triage-demo` Space was created.
 
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `78e5c72`.
+- Latest pushed commit: `5526ddf`.
+- Repository is public: `https://github.com/celalthedon/crisis-text-triage`.
+- Description and topics have been set.
+- Homepage is intentionally unset until a live Hugging Face Space is verified.
 
 ## Hugging Face Deployment Status
 
 - Authenticated as `celalibr`.
-- Space not created or deployed yet.
+- Deployment blocked by Hugging Face billing requirement for Docker Spaces.
+- `python deploy\huggingface\deploy_space.py` failed with `402 Payment Required`.
+- Verified that neither `celalibr/crisis-text-triage` nor `celalibr/crisis-text-triage-demo` currently exists.
 
 ## Phase 1 Audit Notes
 
