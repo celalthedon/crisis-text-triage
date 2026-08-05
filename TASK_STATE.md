@@ -21,6 +21,7 @@
 - Atomic commit completed and pushed: `test(inference): add model and inference tests`.
 - Atomic commit completed and pushed: `feat(app): refine the explainable Streamlit interface`.
 - Atomic commit completed and pushed: `docs(results): add final reports and visualization assets`.
+- Atomic commit completed and pushed: `model(release): add deployable final classifier`.
 
 ## Current Branch
 
@@ -28,7 +29,7 @@
 
 ## Latest Commit Hash
 
-- `debffd8`
+- `0fbcb69`
 
 ## Tests Already Passed
 
@@ -98,16 +99,23 @@
   - `load_model()` and sample prediction succeeded.
   - `python scripts\smoke_test_inference.py`
   - `python -m pytest -q` (11 passed, 4 known scikit-learn version warnings).
+- Documentation checks passed:
+  - No premature Hugging Face live-demo claims.
+  - `python -m compileall app.py src scripts tests`
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed, 4 known scikit-learn version warnings).
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `models/README.md`
-- `models/final_e11_train_plus_validation.joblib`
+- `README.md`
+- `docs/MODEL_CARD.md`
+- `docs/EXPERIMENTS.md`
+- `docs/ETHICS_AND_LIMITATIONS.md`
 
 ## Next Exact Action
 
-- Validate final model loadability and commit/push `model(release): add deployable final classifier`.
+- Run compile, smoke, pytest, and docs sanity scan; commit and push `docs(readme): add comprehensive project documentation`.
 
 ## Unresolved Errors
 
@@ -117,7 +125,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `debffd8`.
+- Latest pushed commit: `0fbcb69`.
 
 ## Hugging Face Deployment Status
 
