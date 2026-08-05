@@ -12,6 +12,7 @@ except ImportError:  # pragma: no cover - supports `python src/inference.py`
 
 
 DEFAULT_MODEL_PATH = FINAL_MODEL_PATH
+REQUIRED_MODEL_STEPS = ("vectorizer", "classifier")
 
 
 CLASS_DISPLAY_NAMES = {
@@ -29,12 +30,45 @@ CLASS_DISPLAY_NAMES = {
 
 
 def load_model(model_path: str | Path | None = None):
-    path = Path(model_path) if model_path else DEFAULT_MODEL_PATH
+    path = Path(model_path).expanduser() if model_path else DEFAULT_MODEL_PATH
 
     if not path.exists():
         raise FileNotFoundError(f"Model file not found: {path}")
 
-    return joblib.load(path)
+    try:
+        model = joblib.load(path)
+    except Exception as exc:
+        raise RuntimeError(f"Could not load model file: {path}") from exc
+
+    validate_model(model)
+    return model
+
+
+def validate_model(model) -> None:
+    """Validate the sklearn Pipeline interface expected by prediction."""
+
+    if not hasattr(model, "named_steps"):
+        raise TypeError("model must be a scikit-learn Pipeline with named_steps")
+
+    missing_steps = [
+        step_name
+        for step_name in REQUIRED_MODEL_STEPS
+        if step_name not in model.named_steps
+    ]
+    if missing_steps:
+        raise ValueError(f"model is missing required steps: {missing_steps}")
+
+    vectorizer = model.named_steps["vectorizer"]
+    classifier = model.named_steps["classifier"]
+
+    if not hasattr(vectorizer, "transform") or not hasattr(vectorizer, "get_feature_names_out"):
+        raise TypeError("model vectorizer must support transform and get_feature_names_out")
+
+    if not hasattr(classifier, "predict_proba") and not hasattr(model, "predict_proba"):
+        raise TypeError("model classifier must provide class probabilities")
+
+    if not hasattr(classifier, "coef_") or not hasattr(classifier, "classes_"):
+        raise TypeError("model classifier must expose coef_ and classes_")
 
 
 def predict_message(
@@ -50,8 +84,13 @@ def predict_message(
     if not text:
         raise ValueError("text cannot be empty")
 
+    if not isinstance(top_n, int):
+        raise TypeError("top_n must be an integer")
+
     if top_n < 1:
         raise ValueError("top_n must be at least 1")
+
+    validate_model(model)
 
     vectorizer = model.named_steps["vectorizer"]
     classifier = model.named_steps["classifier"]

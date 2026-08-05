@@ -16,6 +16,7 @@
 - Atomic commit completed and pushed: `notebook(training): organize baseline and model-selection experiments`.
 - Atomic commit completed and pushed: `notebook(tuning): add C tuning and controlled ablation experiments`.
 - Atomic commit completed and pushed: `notebook(evaluation): add explainability and validation error analysis`.
+- Atomic commit completed and pushed: `notebook(test): add one-time final test evaluation`.
 
 ## Current Branch
 
@@ -23,7 +24,7 @@
 
 ## Latest Commit Hash
 
-- `8a161e9`
+- `a20c407`
 
 ## Tests Already Passed
 
@@ -62,15 +63,20 @@
   - 20 cells, source-only.
   - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or final test prediction variables.
   - Covers high-confidence errors, manual audit, TF-IDF coefficient contributions, event-specific terms, and `other_relevant_information` ambiguity.
+- Final test notebook validation passed:
+  - JSON parsed successfully.
+  - 26 cells, source-only.
+  - Final test metrics, predictions, confusion matrix image save, and `EVALUATED_ONCE` metadata update are present.
+  - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or `/content/` paths.
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `notebooks/03_evaluation_explainability.ipynb`
+- `src/inference.py`
 
 ## Next Exact Action
 
-- Validate final one-time test evaluation notebook section, commit and push `notebook(test): add one-time final test evaluation`.
+- Run compile and inference smoke checks, commit and push `feat(inference): harden reusable prediction and explanation module`.
 
 ## Unresolved Errors
 
@@ -80,7 +86,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `8a161e9`.
+- Latest pushed commit: `a20c407`.
 
 ## Hugging Face Deployment Status
 
