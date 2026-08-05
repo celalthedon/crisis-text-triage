@@ -11,9 +11,9 @@ Explainable humanitarian crisis message triage using TF-IDF word unigram/bigram 
 
 During fast-moving disasters, responders and analysts may face a flood of short social-media messages. Manual triage is slow, inconsistent, and difficult to scale. CrisisText classifies humanitarian messages into operational categories and surfaces coefficient-based explanations so a reviewer can see which terms supported or opposed the prediction.
 
-## Live Demo
+## Run Locally
 
-Docker-based Hugging Face Space deployment is pending final release verification. Run locally for now:
+CrisisText is released as a local Streamlit app with a verified Docker runtime. No hosted Hugging Face demo is linked in this README because the Docker Space deployment was not completed.
 
 ```powershell
 pip install -r requirements.txt
@@ -198,9 +198,30 @@ pytest -q
 ruff check .
 ```
 
-## Docker and Hugging Face Deployment
+## Docker
 
-The deployment target is a Docker Hugging Face Space under `celalibr/crisis-text-triage`. Deployment files live in `deploy/huggingface/` and are added in the release workflow.
+The Docker image was built and smoke-tested locally.
+
+```powershell
+docker build -t crisis-text-triage:local -f deploy/huggingface/Dockerfile .
+docker run --rm -p 7860:7860 crisis-text-triage:local
+```
+
+Then open:
+
+```text
+http://127.0.0.1:7860
+```
+
+The container health endpoint was verified at:
+
+```text
+http://127.0.0.1:7860/_stcore/health
+```
+
+## Hugging Face Space Status
+
+This release intentionally does not include a live Hugging Face Space. Hugging Face returned `402 Payment Required` when creating the Docker Space because Docker Spaces on free `cpu-basic` require a PRO subscription. The repository keeps the Docker Space packaging in `deploy/huggingface/` for reproducibility, but no unverified live-demo badge or Space URL is published.
 
 ## Future Work
 
