@@ -17,6 +17,7 @@
 - Atomic commit completed and pushed: `notebook(tuning): add C tuning and controlled ablation experiments`.
 - Atomic commit completed and pushed: `notebook(evaluation): add explainability and validation error analysis`.
 - Atomic commit completed and pushed: `notebook(test): add one-time final test evaluation`.
+- Atomic commit completed and pushed: `feat(inference): harden reusable prediction and explanation module`.
 
 ## Current Branch
 
@@ -24,7 +25,7 @@
 
 ## Latest Commit Hash
 
-- `a20c407`
+- `420582b`
 
 ## Tests Already Passed
 
@@ -68,15 +69,21 @@
   - 26 cells, source-only.
   - Final test metrics, predictions, confusion matrix image save, and `EVALUATED_ONCE` metadata update are present.
   - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or `/content/` paths.
+- Inference hardening checks passed:
+  - `python -m compileall app.py src`
+  - `python src\inference.py`
+  - Package import smoke check with empty-input, non-string-input, and `top_n` validation assertions.
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `src/inference.py`
+- `scripts/smoke_test_inference.py`
+- `tests/test_inference.py`
+- `tests/test_project_structure.py`
 
 ## Next Exact Action
 
-- Run compile and inference smoke checks, commit and push `feat(inference): harden reusable prediction and explanation module`.
+- Run compile, inference smoke script, and pytest; commit and push `test(inference): add model and inference tests`.
 
 ## Unresolved Errors
 
@@ -86,7 +93,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `a20c407`.
+- Latest pushed commit: `420582b`.
 
 ## Hugging Face Deployment Status
 
