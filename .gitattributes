@@ -1,0 +1,5 @@
+* text=auto
+*.joblib binary
+*.png binary
+*.parquet binary
+*.ipynb linguist-documentation=true

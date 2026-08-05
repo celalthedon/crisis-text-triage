@@ -1,0 +1,53 @@
+# Python cache and build output
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+*.pem
+*.key
+*.token
+
+# Notebook and editor state
+.ipynb_checkpoints/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Local dataset copies are regenerated from QCRI/HumAID-all.
+data/raw/*
+data/processed/*
+!data/README.md
+
+# Keep only aggregate, non-sensitive reports in Git.
+reports/final_test_predictions.csv
+reports/validation_prediction_analysis.csv
+reports/validation_wrong_predictions.csv
+reports/manual_error_audit.csv
+
+# Keep only the deployable final model binary.
+models/*.joblib
+!models/final_e11_train_plus_validation.joblib
+
+# Keep only final public checkpoint metadata.
+checkpoints/*
+!checkpoints/final_model_selection.json
+
+# Generated local inventory files.
+project_manifest.csv
+project_tree.txt
