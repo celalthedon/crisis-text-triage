@@ -22,6 +22,7 @@
 - Atomic commit completed and pushed: `feat(app): refine the explainable Streamlit interface`.
 - Atomic commit completed and pushed: `docs(results): add final reports and visualization assets`.
 - Atomic commit completed and pushed: `model(release): add deployable final classifier`.
+- Atomic commit completed and pushed: `docs(readme): add comprehensive project documentation`.
 
 ## Current Branch
 
@@ -29,7 +30,7 @@
 
 ## Latest Commit Hash
 
-- `0fbcb69`
+- `d0732b0`
 
 ## Tests Already Passed
 
@@ -104,28 +105,41 @@
   - `python -m compileall app.py src scripts tests`
   - `python scripts\smoke_test_inference.py`
   - `python -m pytest -q` (11 passed, 4 known scikit-learn version warnings).
+- Packaging checks passed:
+  - `python -m pip install -r requirements.txt -r requirements-dev.txt`
+  - `python -c "import pandas, sklearn, numpy, scipy, streamlit, joblib, numexpr, bottleneck; ..."`
+  - `python scripts\validate_project.py`
+  - `python -m compileall app.py src scripts tests`
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed)
+  - `ruff check .`
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `README.md`
-- `docs/MODEL_CARD.md`
-- `docs/EXPERIMENTS.md`
-- `docs/ETHICS_AND_LIMITATIONS.md`
+- `app.py`
+- `requirements.txt`
+- `requirements-dev.txt`
+- `pyproject.toml`
+- `scripts/smoke_test_inference.py`
+- `scripts/validate_project.py`
+- `src/evaluation.py`
+- `src/inference.py`
+- `src/preprocessing.py`
+- `tests/test_project_structure.py`
 
 ## Next Exact Action
 
-- Run compile, smoke, pytest, and docs sanity scan; commit and push `docs(readme): add comprehensive project documentation`.
+- Install/update dependencies if needed, run validation, Ruff, smoke, and pytest; commit and push `chore(packaging): add reproducible dependencies and tooling`.
 
 ## Unresolved Errors
 
 - GitHub CLI is installed at `C:\Program Files\GitHub CLI\gh.exe`, but this shell session does not have it on `PATH`; commands use the full path.
-- Local inference loads the model but emits scikit-learn `InconsistentVersionWarning` because the active environment has scikit-learn 1.5.1 while the model was serialized with 1.6.1.
 
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `0fbcb69`.
+- Latest pushed commit: `d0732b0`.
 
 ## Hugging Face Deployment Status
 

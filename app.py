@@ -9,7 +9,6 @@ import streamlit as st
 from src.inference import CLASS_DISPLAY_NAMES, load_model, predict_message
 from src.paths import FINAL_TEST_METRICS_PATH
 
-
 EXAMPLE_MESSAGES = {
     "Urgent needs": "Families urgently need clean water, food and medical supplies.",
     "Missing person": (

@@ -5,7 +5,6 @@ from __future__ import annotations
 import re
 import unicodedata
 
-
 MENTION_PATTERN = re.compile(r"@\w+")
 URL_PATTERN = re.compile(r"https?://\S+|www\.\S+")
 HASHTAG_PATTERN = re.compile(r"#(\w+)")

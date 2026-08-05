@@ -9,7 +9,6 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report, f1_score
 
-
 CRITICAL_CLASSES = (
     "missing_or_found_people",
     "requests_or_urgent_needs",

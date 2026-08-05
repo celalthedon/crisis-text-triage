@@ -138,7 +138,8 @@ def predict_message(
         for feature_index, tfidf_value, contribution in zip(
             active_indices,
             active_values,
-            contributions
+            contributions,
+            strict=True,
         )
     ]
 
