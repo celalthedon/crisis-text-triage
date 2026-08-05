@@ -10,6 +10,7 @@
 - Original notebook archived at `notebooks/archive/01_data_setup_original.ipynb` with all 324 source cells preserved and outputs cleared.
 - Atomic commit completed and pushed: `chore(notebooks): archive the original research notebook`.
 - Atomic commit completed and pushed: `refactor(paths): replace Colab and Drive paths with project-relative paths`.
+- Atomic commit completed and pushed: `refactor(preprocessing): extract reusable text preprocessing utilities`.
 
 ## Current Branch
 
@@ -17,7 +18,7 @@
 
 ## Latest Commit Hash
 
-- `d0dc81d`
+- `2c063a2`
 
 ## Tests Already Passed
 
@@ -32,15 +33,18 @@
   - `python -m compileall app.py src`
   - `python -c "from src.inference import load_model, predict_message; ..."`
   - `python src\inference.py`
+- Preprocessing checks passed:
+  - `python -m compileall app.py src`
+  - Example behavior assertions for normalization, URL replacement, mention replacement, hashtag normalization, and full preprocessing.
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `src/preprocessing.py`
+- `src/evaluation.py`
 
 ## Next Exact Action
 
-- Run compile and preprocessing behavior checks, commit and push `refactor(preprocessing): extract reusable text preprocessing utilities`.
+- Run compile and evaluation helper checks, commit and push `refactor(evaluation): extract reusable metric and error-analysis helpers`.
 
 ## Unresolved Errors
 
@@ -50,7 +54,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `d0dc81d`.
+- Latest pushed commit: `2c063a2`.
 
 ## Hugging Face Deployment Status
 
