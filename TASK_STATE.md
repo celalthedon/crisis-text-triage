@@ -20,6 +20,7 @@
 - Atomic commit completed and pushed: `feat(inference): harden reusable prediction and explanation module`.
 - Atomic commit completed and pushed: `test(inference): add model and inference tests`.
 - Atomic commit completed and pushed: `feat(app): refine the explainable Streamlit interface`.
+- Atomic commit completed and pushed: `docs(results): add final reports and visualization assets`.
 
 ## Current Branch
 
@@ -27,7 +28,7 @@
 
 ## Latest Commit Hash
 
-- `3b55425`
+- `debffd8`
 
 ## Tests Already Passed
 
@@ -85,19 +86,28 @@
   - `python scripts\smoke_test_inference.py`
   - `python -m pytest -q` (11 passed, 4 known scikit-learn version warnings).
   - Streamlit startup health check passed on `http://127.0.0.1:8501/_stcore/health`.
+- Results publication checks passed:
+  - Final metrics match embedded metadata in `checkpoints/final_model_selection.json`.
+  - `test_set_status` is `EVALUATED_ONCE`.
+  - `.gitignore` excludes raw/processed parquet data, per-message prediction exports, manual audit detail, and historical model binaries.
+  - `python -m compileall app.py src scripts tests`
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed, 4 known scikit-learn version warnings).
+- Final model artifact checks passed:
+  - `models/final_e11_train_plus_validation.joblib` exists and is 14,323,460 bytes.
+  - `load_model()` and sample prediction succeeded.
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed, 4 known scikit-learn version warnings).
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `assets/final_test_confusion_matrix_normalized.png`
-- `checkpoints/final_model_selection.json`
-- `reports/*.csv`
-- `reports/final_test_metrics.json`
-- `reports/final_test_confusion_matrix_normalized.png`
+- `models/README.md`
+- `models/final_e11_train_plus_validation.joblib`
 
 ## Next Exact Action
 
-- Validate report consistency and safe publication scope, commit and push `docs(results): add final reports and visualization assets`.
+- Validate final model loadability and commit/push `model(release): add deployable final classifier`.
 
 ## Unresolved Errors
 
@@ -107,7 +117,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `3b55425`.
+- Latest pushed commit: `debffd8`.
 
 ## Hugging Face Deployment Status
 
