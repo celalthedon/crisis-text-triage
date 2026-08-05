@@ -13,6 +13,7 @@
 - Atomic commit completed and pushed: `refactor(preprocessing): extract reusable text preprocessing utilities`.
 - Atomic commit completed and pushed: `refactor(evaluation): extract reusable metric and error-analysis helpers`.
 - Atomic commit completed and pushed: `notebook(data): add reproducible data setup and audit workflow`.
+- Atomic commit completed and pushed: `notebook(training): organize baseline and model-selection experiments`.
 
 ## Current Branch
 
@@ -20,7 +21,7 @@
 
 ## Latest Commit Hash
 
-- `68796fb`
+- `929e15a`
 
 ## Tests Already Passed
 
@@ -45,6 +46,10 @@
   - JSON parsed successfully.
   - 23 cells, source-only.
   - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or model prediction calls.
+- E0-E9 training notebook validation passed:
+  - JSON parsed successfully.
+  - 28 cells, source-only.
+  - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or test-set variables.
 
 ## Files Currently Being Modified
 
@@ -53,7 +58,7 @@
 
 ## Next Exact Action
 
-- Validate the E0-E9 training notebook, commit and push `notebook(training): organize baseline and model-selection experiments`.
+- Validate E10-E16 tuning/ablation cells and final train+validation retraining workflow, commit and push `notebook(tuning): add C tuning and controlled ablation experiments`.
 
 ## Unresolved Errors
 
@@ -63,7 +68,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `68796fb`.
+- Latest pushed commit: `929e15a`.
 
 ## Hugging Face Deployment Status
 
