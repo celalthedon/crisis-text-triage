@@ -12,6 +12,7 @@
 - Atomic commit completed and pushed: `refactor(paths): replace Colab and Drive paths with project-relative paths`.
 - Atomic commit completed and pushed: `refactor(preprocessing): extract reusable text preprocessing utilities`.
 - Atomic commit completed and pushed: `refactor(evaluation): extract reusable metric and error-analysis helpers`.
+- Atomic commit completed and pushed: `notebook(data): add reproducible data setup and audit workflow`.
 
 ## Current Branch
 
@@ -19,7 +20,7 @@
 
 ## Latest Commit Hash
 
-- `9d5aa61`
+- `68796fb`
 
 ## Tests Already Passed
 
@@ -40,16 +41,19 @@
 - Evaluation helper checks passed:
   - `python -m compileall app.py src`
   - Toy assertions for classification report conversion, metric extraction, prediction analysis, confusion pairs, and class-error summaries.
+- Clean data notebook validation passed:
+  - JSON parsed successfully.
+  - 23 cells, source-only.
+  - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or model prediction calls.
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `notebooks/01_data_setup.ipynb`
-- `data/README.md`
+- `notebooks/02_model_training.ipynb`
 
 ## Next Exact Action
 
-- Validate the clean data notebook and data README, commit and push `notebook(data): add reproducible data setup and audit workflow`.
+- Validate the E0-E9 training notebook, commit and push `notebook(training): organize baseline and model-selection experiments`.
 
 ## Unresolved Errors
 
@@ -59,7 +63,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `9d5aa61`.
+- Latest pushed commit: `68796fb`.
 
 ## Hugging Face Deployment Status
 
