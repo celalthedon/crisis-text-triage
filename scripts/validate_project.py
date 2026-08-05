@@ -159,7 +159,7 @@ def check_no_colab_paths(tracked_files: list[str]) -> None:
     text_suffixes = {".py", ".md", ".toml", ".yml", ".yaml", ".txt", ".cff", ".json", ".csv", ".ipynb"}
 
     for relative_path in tracked_files:
-        if relative_path == "TASK_STATE.md":
+        if relative_path in {"TASK_STATE.md", "scripts/validate_project.py"}:
             continue
         if relative_path.startswith("notebooks/archive/"):
             continue

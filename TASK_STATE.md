@@ -23,6 +23,7 @@
 - Atomic commit completed and pushed: `docs(results): add final reports and visualization assets`.
 - Atomic commit completed and pushed: `model(release): add deployable final classifier`.
 - Atomic commit completed and pushed: `docs(readme): add comprehensive project documentation`.
+- Atomic commit completed and pushed: `chore(packaging): add reproducible dependencies and tooling`.
 
 ## Current Branch
 
@@ -30,7 +31,7 @@
 
 ## Latest Commit Hash
 
-- `d0732b0`
+- `b5e5707`
 
 ## Tests Already Passed
 
@@ -113,24 +114,21 @@
   - `python scripts\smoke_test_inference.py`
   - `python -m pytest -q` (11 passed)
   - `ruff check .`
+- CI workflow checks passed locally:
+  - `python scripts\validate_project.py`
+  - `python -m compileall app.py src scripts tests`
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed)
+  - `ruff check .`
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `app.py`
-- `requirements.txt`
-- `requirements-dev.txt`
-- `pyproject.toml`
-- `scripts/smoke_test_inference.py`
-- `scripts/validate_project.py`
-- `src/evaluation.py`
-- `src/inference.py`
-- `src/preprocessing.py`
-- `tests/test_project_structure.py`
+- `.github/workflows/ci.yml`
 
 ## Next Exact Action
 
-- Install/update dependencies if needed, run validation, Ruff, smoke, and pytest; commit and push `chore(packaging): add reproducible dependencies and tooling`.
+- Run validation, Ruff, smoke, and pytest; commit and push `ci: add automated lint, test and inference smoke checks`.
 
 ## Unresolved Errors
 
@@ -139,7 +137,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `d0732b0`.
+- Latest pushed commit: `b5e5707`.
 
 ## Hugging Face Deployment Status
 
