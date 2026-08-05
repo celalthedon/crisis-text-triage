@@ -14,6 +14,7 @@
 - Atomic commit completed and pushed: `refactor(evaluation): extract reusable metric and error-analysis helpers`.
 - Atomic commit completed and pushed: `notebook(data): add reproducible data setup and audit workflow`.
 - Atomic commit completed and pushed: `notebook(training): organize baseline and model-selection experiments`.
+- Atomic commit completed and pushed: `notebook(tuning): add C tuning and controlled ablation experiments`.
 
 ## Current Branch
 
@@ -21,7 +22,7 @@
 
 ## Latest Commit Hash
 
-- `929e15a`
+- `176a94d`
 
 ## Tests Already Passed
 
@@ -50,15 +51,20 @@
   - JSON parsed successfully.
   - 28 cells, source-only.
   - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or test-set variables.
+- E10-E16 training notebook validation passed:
+  - JSON parsed successfully.
+  - 40 cells, source-only.
+  - All E0-E16 experiment IDs present.
+  - No Colab, Google Drive, `/content/drive`, `%%writefile`, `!pip`, or test prediction variables.
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `notebooks/02_model_training.ipynb`
+- `notebooks/03_evaluation_explainability.ipynb`
 
 ## Next Exact Action
 
-- Validate E10-E16 tuning/ablation cells and final train+validation retraining workflow, commit and push `notebook(tuning): add C tuning and controlled ablation experiments`.
+- Validate validation/explainability notebook section, commit and push `notebook(evaluation): add explainability and validation error analysis`.
 
 ## Unresolved Errors
 
@@ -68,7 +74,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `929e15a`.
+- Latest pushed commit: `176a94d`.
 
 ## Hugging Face Deployment Status
 
