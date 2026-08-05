@@ -24,6 +24,7 @@
 - Atomic commit completed and pushed: `model(release): add deployable final classifier`.
 - Atomic commit completed and pushed: `docs(readme): add comprehensive project documentation`.
 - Atomic commit completed and pushed: `chore(packaging): add reproducible dependencies and tooling`.
+- Atomic commit completed and pushed: `ci: add automated lint, test and inference smoke checks`.
 
 ## Current Branch
 
@@ -31,7 +32,7 @@
 
 ## Latest Commit Hash
 
-- `b5e5707`
+- `eafab30`
 
 ## Tests Already Passed
 
@@ -120,15 +121,24 @@
   - `python scripts\smoke_test_inference.py`
   - `python -m pytest -q` (11 passed)
   - `ruff check .`
+- Docker Space package checks passed:
+  - `python -m py_compile deploy\huggingface\deploy_space.py`
+  - `python scripts\validate_project.py`
+  - `python -m compileall app.py src scripts tests deploy\huggingface`
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed)
+  - `ruff check .`
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `.github/workflows/ci.yml`
+- `deploy/huggingface/README.md`
+- `deploy/huggingface/Dockerfile`
+- `deploy/huggingface/deploy_space.py`
 
 ## Next Exact Action
 
-- Run validation, Ruff, smoke, and pytest; commit and push `ci: add automated lint, test and inference smoke checks`.
+- Run deploy script syntax check, validation, Ruff, smoke, and pytest; commit and push `feat(space): add Docker-based Hugging Face Space deployment`.
 
 ## Unresolved Errors
 
@@ -137,7 +147,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `b5e5707`.
+- Latest pushed commit: `eafab30`.
 
 ## Hugging Face Deployment Status
 
