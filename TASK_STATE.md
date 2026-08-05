@@ -25,6 +25,7 @@
 - Atomic commit completed and pushed: `docs(readme): add comprehensive project documentation`.
 - Atomic commit completed and pushed: `chore(packaging): add reproducible dependencies and tooling`.
 - Atomic commit completed and pushed: `ci: add automated lint, test and inference smoke checks`.
+- Atomic commit completed and pushed: `feat(space): add Docker-based Hugging Face Space deployment`.
 
 ## Current Branch
 
@@ -32,7 +33,7 @@
 
 ## Latest Commit Hash
 
-- `eafab30`
+- `90595d7`
 
 ## Tests Already Passed
 
@@ -128,17 +129,23 @@
   - `python scripts\smoke_test_inference.py`
   - `python -m pytest -q` (11 passed)
   - `ruff check .`
+- Release metadata checks passed:
+  - `python scripts\validate_project.py`
+  - `python -m compileall app.py src scripts tests deploy\huggingface`
+  - `python scripts\smoke_test_inference.py`
+  - `python -m pytest -q` (11 passed)
+  - `ruff check .`
 
 ## Files Currently Being Modified
 
 - `TASK_STATE.md`
-- `deploy/huggingface/README.md`
-- `deploy/huggingface/Dockerfile`
-- `deploy/huggingface/deploy_space.py`
+- `CITATION.cff`
+- `CHANGELOG.md`
+- `LICENSE`
 
 ## Next Exact Action
 
-- Run deploy script syntax check, validation, Ruff, smoke, and pytest; commit and push `feat(space): add Docker-based Hugging Face Space deployment`.
+- Run validation, Ruff, smoke, and pytest; commit and push `docs(release): add citation, license and changelog`.
 
 ## Unresolved Errors
 
@@ -147,7 +154,7 @@
 ## GitHub Publication Status
 
 - Remote repository created and `main` is tracking `origin/main`.
-- Latest pushed commit: `eafab30`.
+- Latest pushed commit: `90595d7`.
 
 ## Hugging Face Deployment Status
 

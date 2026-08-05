@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use CrisisText, please cite this repository and the upstream HumAID dataset/paper."
+title: "CrisisText: Explainable Humanitarian Crisis Message Triage"
+authors:
+  - family-names: "Ibrahimli"
+    given-names: "Celal"
+version: "1.0.0"
+date-released: "2026-08-05"
+repository-code: "https://github.com/celalthedon/crisis-text-triage"
+url: "https://github.com/celalthedon/crisis-text-triage"
+license: "MIT"
+keywords:
+  - "nlp"
+  - "crisis-informatics"
+  - "humanitarian-ai"
+  - "explainable-ai"
+  - "text-classification"
+references:
+  - type: conference-paper
+    title: "HumAID: Human-Annotated Disaster Incidents Data from Twitter"
+    authors:
+      - family-names: "Alam"
+        given-names: "Firoj"
+      - family-names: "Qazi"
+        given-names: "Umair"
+      - family-names: "Imran"
+        given-names: "Muhammad"
+      - family-names: "Ofli"
+        given-names: "Ferda"
+    conference:
+      name: "Proceedings of the Fifteenth International AAAI Conference on Web and Social Media"
+    year: 2021
